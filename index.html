@@ -3,22 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Нейрокоррекция для детей — мягко и с любовью</title>
+<title>SAFA NEIRO — нейрокоррекция для детей</title>
 <meta name="description" content="Нейрокоррекция для детей с особенностями развития. Бесплатная первая консультация.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&family=Source+Sans+3:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
 <style>
 :root{
+  /* Фирменный фиолетовый из логотипа, смягчённый до пыльных сиреневых тонов */
   /* 5 основных */
-  --beige:#F5EDE0; --peach:#FFD4B8; --coral:#E8A598; --gray:#9A8B82; --terra:#C9A87C;
+  --bg:#F5F0F7;       /* сиреневый крем — фон */
+  --lilac:#E6DCF5;    /* нежная сирень — декор, плашки */
+  --lavender:#B9A6DD; /* пыльная лаванда — линии, акценты */
+  --violet:#6B4BB0;   /* мягкий фирменный фиолетовый — кнопки */
+  --gray:#8C8298;     /* серо-сиреневый — вторичное */
   /* 2 акцентных */
-  --olive:#B8C4A8; --cream:#FAF7F2;
-  /* тёмные оттенки тех же тонов — только для читаемости текста */
-  --ink:#4A3B33; --ink-soft:#6F6058; --coral-deep:#B06A5B;
+  --warm:#F6D9CA;     /* тёплый персик — «тепло» рядом с фиолетовым */
+  --cream:#FCFAF8;    /* карточки */
+  /* логотип и текст */
+  --brand:#5B3A99; --ink:#3B2D55; --ink-soft:#665A78; --accent:#6B4BB0; --label:#7A62B8;
 
-  --shadow:0 4px 20px rgba(154,139,130,.08);
-  --shadow-lift:0 14px 40px rgba(154,139,130,.16);
+  --shadow:0 4px 20px rgba(91,58,153,.07);
+  --shadow-lift:0 14px 40px rgba(91,58,153,.13);
   --ease:cubic-bezier(.4,0,.2,1);
   --dur:500ms;
   --r-btn:30px; --r-card:20px; --r-img:16px; --r-input:12px;
@@ -30,7 +36,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  margin:0; background:var(--beige); color:var(--ink);
+  margin:0; background:var(--bg); color:var(--ink);
   font:400 17px/1.7 var(--font-body); overflow-x:hidden;
 }
 @media (min-width:900px){body{font-size:18px}}
@@ -41,15 +47,15 @@ body::before{
 }
 img{max-width:100%;display:block}
 h1,h2,h3{font-family:var(--font-head);font-weight:700;letter-spacing:.012em;line-height:1.18;margin:0;color:var(--ink);text-wrap:balance}
-h1{font-size:clamp(2.3rem,5.2vw,4.1rem)}
+h1{font-size:clamp(2.3rem,4.6vw,3.6rem)}
 h2{font-size:clamp(1.9rem,3.6vw,2.9rem)}
 h3{font-size:1.2rem;font-weight:600;letter-spacing:.02em}
 p{margin:0}
 a{color:inherit}
-.accent{color:var(--coral-deep)}
-.mark{background:linear-gradient(transparent 58%, var(--peach) 58%, var(--peach) 92%, transparent 92%);padding:0 .1em}
+.accent{color:var(--accent)}
+.mark{background:linear-gradient(transparent 58%, var(--lilac) 58%, var(--lilac) 92%, transparent 92%);padding:0 .1em}
 .lead{color:var(--ink-soft);font-size:1.08em;max-width:34ch}
-.eyebrow{font:600 .8rem/1 var(--font-head);letter-spacing:.16em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:18px}
+.eyebrow{font:600 .8rem/1 var(--font-head);letter-spacing:.16em;text-transform:uppercase;color:var(--label);display:block;margin-bottom:18px}
 .wrap{max-width:1200px;margin:0 auto;padding:0 var(--gutter)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
@@ -57,13 +63,13 @@ a{color:inherit}
 .btn{
   display:inline-flex;align-items:center;gap:12px;
   padding:18px 34px;border-radius:var(--r-btn);border:0;cursor:pointer;
-  background:var(--peach);color:var(--ink);text-decoration:none;
+  background:var(--violet);color:var(--cream);text-decoration:none;
   font:600 1rem/1 var(--font-head);letter-spacing:.03em;
-  box-shadow:0 6px 24px rgba(232,165,152,.28);
+  box-shadow:0 6px 24px rgba(107,75,176,.22);
   transition:background var(--dur) var(--ease),box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease);
 }
-.btn:hover{background:var(--coral);box-shadow:0 10px 32px rgba(232,165,152,.38);transform:translateY(-2px)}
-.btn:focus-visible,.round:focus-visible,.faq__q:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.btn:hover{background:var(--brand);box-shadow:0 10px 32px rgba(107,75,176,.3);transform:translateY(-2px)}
+.btn:focus-visible,.round:focus-visible,.faq__q:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--label);outline-offset:3px}
 .btn svg{width:18px;height:18px;transition:transform var(--dur) var(--ease)}
 .btn:hover svg{transform:translateX(4px)}
 
@@ -71,33 +77,33 @@ a{color:inherit}
 .ph{
   position:relative;overflow:hidden;border-radius:var(--r-img);
   background:
-    radial-gradient(120% 90% at 20% 15%, rgba(255,212,184,.9), transparent 60%),
-    radial-gradient(90% 80% at 85% 90%, rgba(232,165,152,.45), transparent 65%),
-    linear-gradient(160deg,#F3E4D3,#EBD8C6);
+    radial-gradient(120% 90% at 20% 15%, rgba(221,208,244,.95), transparent 60%),
+    radial-gradient(90% 80% at 85% 90%, rgba(246,217,202,.7), transparent 65%),
+    linear-gradient(160deg,#EFE8F7,#E6DCF1);
 }
 .ph::after{ /* лёгкая «льняная» фактура */
   content:"";position:absolute;inset:0;opacity:.35;mix-blend-mode:multiply;
   background:
-    repeating-linear-gradient(0deg, rgba(201,168,124,.10) 0 1px, transparent 1px 4px),
-    repeating-linear-gradient(90deg, rgba(201,168,124,.08) 0 1px, transparent 1px 5px);
+    repeating-linear-gradient(0deg, rgba(107,75,176,.07) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, rgba(107,75,176,.05) 0 1px, transparent 1px 5px);
 }
 .ph__cap{
   position:absolute;left:16px;bottom:16px;right:16px;z-index:1;
   display:flex;gap:10px;align-items:flex-start;
   font-size:.82rem;line-height:1.45;color:var(--ink-soft);
 }
-.ph__cap svg{flex:none;width:18px;height:18px;margin-top:1px;stroke:var(--terra)}
+.ph__cap svg{flex:none;width:18px;height:18px;margin-top:1px;stroke:var(--label)}
 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 /* ---------- волны ---------- */
 .band{position:relative}
 .band--cream{background:var(--cream)}
-.band--beige{background:var(--beige)}
-.band--peach{background:#FBE3D2}
+.band--bg{background:var(--bg)}
+.band--lilac{background:#EFE7F8}
 .wave{position:absolute;left:0;top:1px;width:100%;height:clamp(36px,6vw,80px);transform:translateY(-100%);display:block}
 .band--cream .wave{color:var(--cream)}
-.band--beige .wave{color:var(--beige)}
-.band--peach .wave{color:#FBE3D2}
+.band--bg .wave{color:var(--bg)}
+.band--lilac .wave{color:#EFE7F8}
 
 /* ---------- появление ---------- */
 .rv{opacity:0;transform:translateY(24px);transition:opacity 600ms var(--ease),transform 600ms var(--ease)}
@@ -110,11 +116,12 @@ a{color:inherit}
 }
 .top.scrolled{background:rgba(250,247,242,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--shadow)}
 .top__in{display:flex;align-items:center;justify-content:space-between;height:76px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.2rem/1 var(--font-head);letter-spacing:.03em}
-.logo svg{width:34px;height:34px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--brand)}
+.logo__mark{width:40px;height:36px;color:var(--brand)}
+.logo__word{font:700 1rem/.95 var(--font-head);letter-spacing:.08em}
 .nav{display:none;gap:34px;font-size:.95rem}
 .nav a{text-decoration:none;color:var(--ink-soft);transition:color var(--dur) var(--ease)}
-.nav a:hover{color:var(--coral-deep)}
+.nav a:hover{color:var(--accent)}
 .top__tel{text-decoration:none;font-weight:500;font-size:.95rem}
 @media (min-width:1000px){.nav{display:flex}}
 
@@ -124,12 +131,15 @@ a{color:inherit}
 .hero__text{display:flex;flex-direction:column;gap:26px;will-change:transform}
 .hero h1 .u{position:relative;white-space:nowrap}
 .hero h1 .u svg{position:absolute;left:-2%;bottom:-.18em;width:104%;height:.36em;overflow:visible}
-.hero h1 .u path{stroke:var(--coral);stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 600ms var(--ease) 500ms}
+.hero h1 .u path{stroke:var(--warm);stroke-width:7;fill:none;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 600ms var(--ease) 500ms}
 .hero.ready h1 .u path{stroke-dashoffset:0}
 .hero__note{display:flex;gap:10px;align-items:center;color:var(--ink-soft);font-size:.95rem}
-.hero__note i{width:8px;height:8px;border-radius:50%;background:var(--olive);flex:none}
+.hero__note i{width:8px;height:8px;border-radius:50%;background:var(--warm);flex:none}
 .hero__media{position:relative}
-.hero__blob{position:absolute;width:62%;aspect-ratio:1;left:-14%;bottom:-16%;height:auto;color:var(--peach);opacity:.7;z-index:0}
+.hero__blob{position:absolute;width:52%;aspect-ratio:1;left:-12%;bottom:-14%;height:auto;color:var(--lilac);transform:rotate(-12deg);z-index:0}
+.rings{position:absolute;right:-18px;top:-26px;z-index:2;width:70px;height:60px}
+.rings i{position:absolute;border:2px solid var(--lavender);border-radius:50%}
+.rings i:nth-child(1){width:18px;height:18px;right:0;top:0}.rings i:nth-child(2){width:11px;height:11px;right:30px;top:12px}.rings i:nth-child(3){width:14px;height:14px;right:8px;top:34px}
 .hero__frame{position:relative;z-index:1;border-radius:var(--r-img) 180px var(--r-img) var(--r-img);overflow:hidden;box-shadow:var(--shadow-lift);aspect-ratio:4/4.4}
 .hero__frame .ph{position:absolute;inset:0;border-radius:0;will-change:transform}
 .hero__scroll{display:none}
@@ -139,7 +149,7 @@ a{color:inherit}
   .hero{height:165vh;padding-top:0}
   .hero__pin{position:sticky;top:0;height:100vh;padding-top:76px;display:flex;align-items:center;overflow:hidden}
   .hero__frame{height:min(68vh,620px)!important}
-  .hero__stage{grid-template-columns:4fr 6fr;align-items:center;gap:64px;padding-top:0;padding-bottom:0;width:100%}
+  .hero__stage{grid-template-columns:4.6fr 5.4fr;align-items:center;gap:64px;padding-top:0;padding-bottom:0;width:100%}
   .hero.settled .hero__text{transform:translateY(calc(var(--p,0) * -80px));opacity:calc(1 - var(--p,0) * .55);transition:none}
   .hero__frame{aspect-ratio:auto;height:min(72vh,640px)}
   .hero__frame .ph{transform:scale(calc(1.08 - var(--p,0) * .08 + var(--p,0) * var(--p,0) * .14))}
@@ -158,8 +168,8 @@ a{color:inherit}
 .card:hover{box-shadow:var(--shadow-lift);transform:translateY(-4px)}
 .notice .card{display:flex;flex-direction:column;align-items:center;gap:22px}
 .notice .card p{font-family:var(--font-head);font-weight:600;font-size:1.12rem;line-height:1.45;max-width:18ch}
-.ico{width:76px;height:76px;border-radius:46% 54% 50% 50%/55% 45% 55% 45%;background:rgba(184,196,168,.32);display:grid;place-items:center;flex:none}
-.ico svg{width:42px;height:42px;stroke:#7E8C6C;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ico{width:76px;height:76px;border-radius:46% 54% 50% 50%/55% 45% 55% 45%;background:rgba(246,217,202,.55);display:grid;place-items:center;flex:none}
+.ico svg{width:42px;height:42px;stroke:var(--violet);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .notice__after{margin-top:56px;font-size:1.15rem;color:var(--ink-soft)}
 .notice__after .accent{font-family:var(--font-head);font-weight:600}
 @media (min-width:760px){.cards3{grid-template-columns:repeat(3,1fr)}}
@@ -172,15 +182,16 @@ a{color:inherit}
 .path__line{display:none}
 .step{position:relative;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
 .step__num{position:relative;width:96px;height:96px;display:grid;place-items:center}
-.step__num .blob{position:absolute;inset:0;width:100%;height:100%;color:var(--peach);opacity:.8}
+.step__num .blob{position:absolute;inset:0;width:100%;height:100%;color:var(--lilac)}
+.step:nth-child(3) .blob{transform:rotate(90deg)}.step:nth-child(4) .blob{transform:rotate(180deg)}
 .step__num svg.i{position:relative;width:44px;height:44px;stroke:var(--ink);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.step__num b{position:absolute;top:-4px;right:-6px;width:30px;height:30px;border-radius:50%;background:var(--cream);box-shadow:var(--shadow);display:grid;place-items:center;font:700 .85rem/1 var(--font-head);color:var(--coral-deep)}
+.step__num b{position:absolute;top:-4px;right:-6px;width:30px;height:30px;border-radius:50%;background:var(--cream);box-shadow:var(--shadow);display:grid;place-items:center;font:700 .85rem/1 var(--font-head);color:var(--accent)}
 .step h3{margin:10px 0 8px;font-size:1.3rem}
 .step p{color:var(--ink-soft);max-width:26ch}
 @media (min-width:900px){
   .path{grid-template-columns:repeat(3,1fr);gap:48px}
   .path__line{display:block;position:absolute;left:6%;right:6%;top:24px;height:80px;width:88%;overflow:visible}
-  .path__line path{stroke:var(--terra);stroke-width:2;fill:none;stroke-dasharray:2 10;stroke-linecap:round}
+  .path__line path{stroke:var(--label);stroke-width:2;fill:none;stroke-dasharray:2 10;stroke-linecap:round}
   .step{grid-template-columns:1fr;justify-items:start}
   .step:nth-child(3){margin-top:56px}
   .step:nth-child(4){margin-top:0}
@@ -194,45 +205,38 @@ a{color:inherit}
 .chart{background:var(--cream);border-radius:var(--r-card);padding:28px 24px 20px;box-shadow:var(--shadow)}
 .chart svg{width:100%;height:auto;overflow:visible}
 .chart .axis{stroke:var(--gray);stroke-width:1.6;fill:none;stroke-linecap:round}
-.chart .curve{stroke:var(--coral);stroke-width:4;fill:none;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;transition:stroke-dashoffset 600ms var(--ease) 200ms}
-.chart .area{fill:var(--peach);opacity:0;transition:opacity 600ms var(--ease) 500ms}
+.chart .curve{stroke:#9A82D6;stroke-width:4;fill:none;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;transition:stroke-dashoffset 600ms var(--ease) 200ms}
+.chart .area{fill:var(--lilac);opacity:0;transition:opacity 600ms var(--ease) 500ms}
 .chart.in .curve{stroke-dashoffset:0}.chart.in .area{opacity:.45}
 .chart text{font:500 13px var(--font-body);fill:var(--ink-soft)}
 .chart__cap{margin-top:10px;font-size:.9rem;color:var(--ink-soft)}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .stat{background:var(--cream);border-radius:var(--r-card);padding:32px 24px;box-shadow:var(--shadow)}
-.stat strong{display:block;font:700 clamp(2.2rem,4.4vw,3.2rem)/1 var(--font-head);color:var(--coral-deep);margin-bottom:12px;letter-spacing:.01em}
+.stat strong{display:block;font:700 clamp(2.2rem,4.4vw,3.2rem)/1 var(--font-head);color:var(--accent);margin-bottom:12px;letter-spacing:.01em}
 .stat strong small{font-size:.45em;letter-spacing:.04em;margin-left:4px}
 .stat p{font-size:.98rem;line-height:1.5;color:var(--ink-soft)}
-.stat--olive{background:rgba(184,196,168,.3)}
-.stat--olive strong{color:#5F6C4E}
+.stat--warm{background:rgba(246,217,202,.55)}
+.stat--warm strong{color:#8A4F3A}
 .results__fine{margin-top:64px;font-size:.85rem;color:var(--ink-soft);opacity:.85}
 @media (min-width:960px){.results__grid{grid-template-columns:5fr 6fr;gap:80px}.stat:nth-child(even){margin-top:28px;margin-bottom:-28px}}
 
-/* ---------- 5. СПЕЦИАЛИСТЫ ---------- */
+/* ---------- 5. СПЕЦИАЛИСТ ---------- */
 .team{padding:var(--section) 0}
 .team h2{margin-bottom:56px;max-width:18ch}
-.founder{display:grid;gap:36px;align-items:center;margin-bottom:40px}
+.founder{display:grid;gap:36px;align-items:center}
 .founder__photo{aspect-ratio:1/1.05;max-width:480px;width:100%;border-radius:200px 200px var(--r-img) var(--r-img);box-shadow:var(--shadow-lift)}
-.founder__role{color:var(--terra);font:600 .82rem/1.4 var(--font-head);letter-spacing:.14em;text-transform:uppercase}
+.founder__role{color:var(--label);font:600 .82rem/1.4 var(--font-head);letter-spacing:.14em;text-transform:uppercase}
 .founder h3{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:700;margin:12px 0 18px}
 .founder__meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
 .chip{padding:8px 16px;border-radius:30px;background:var(--cream);box-shadow:var(--shadow);font-size:.9rem;color:var(--ink-soft)}
 .chip b{font-weight:500;color:var(--ink)}
 .quote{position:relative;font:600 clamp(1.3rem,2.4vw,1.75rem)/1.45 var(--font-head);color:var(--ink);padding-left:28px;max-width:24ch}
-.quote::before{content:"";position:absolute;left:0;top:.35em;bottom:.35em;width:4px;border-radius:4px;background:var(--coral)}
-.mates{display:grid;gap:20px}
-.mate{display:flex;gap:22px;align-items:center;background:var(--cream);border-radius:var(--r-card);padding:24px;box-shadow:var(--shadow)}
-.mate .ph{width:96px;height:96px;flex:none;border-radius:50%}
-.mate .ph__cap{display:none}
-.mate h3{font-size:1.1rem;margin-bottom:4px}
-.mate p{font-size:.95rem;line-height:1.5;color:var(--ink-soft)}
-.mate em{display:block;font-style:normal;margin-top:6px;color:var(--coral-deep);font-size:.95rem}
-.team__all{margin-top:48px;color:var(--ink-soft);max-width:44ch}
+.quote::before{content:"";position:absolute;left:0;top:.35em;bottom:.35em;width:4px;border-radius:4px;background:var(--lavender)}
+.founder__solo{display:flex;align-items:center;gap:16px;margin-top:34px;color:var(--ink-soft);max-width:40ch}
+.founder__solo .ico{width:56px;height:56px}.founder__solo .ico svg{width:28px;height:28px}
 @media (min-width:900px){
   .founder{grid-template-columns:5fr 6fr;gap:80px}
-  .mates{grid-template-columns:1fr 1fr}
-}
+  }
 
 /* ---------- 6. ПРОЦЕСС ---------- */
 .process{padding:var(--section) 0}
@@ -241,14 +245,14 @@ a{color:inherit}
 .process__side .ph{aspect-ratio:1/1;margin-top:40px;width:min(100%,240px);border-radius:50% 50% 46% 54%/52% 48% 52% 48%;max-width:360px}
 .process__side .ph .ph__cap{left:20%;right:20%;bottom:16%;justify-content:center;text-align:center}
 .tl{list-style:none;margin:0;padding:0;position:relative}
-.tl::before{content:"";position:absolute;left:31px;top:30px;bottom:30px;width:2px;background:repeating-linear-gradient(to bottom,var(--terra) 0 3px,transparent 3px 11px);border-radius:2px}
+.tl::before{content:"";position:absolute;left:31px;top:30px;bottom:30px;width:2px;background:repeating-linear-gradient(to bottom,var(--label) 0 3px,transparent 3px 11px);border-radius:2px}
 .tl li{position:relative;display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:center;padding:14px 0}
 .tl .ico{width:64px;height:64px;background:var(--cream);box-shadow:var(--shadow);position:relative;z-index:1}
 .tl .ico svg{width:30px;height:30px}
-.tl li:first-child .ico{background:var(--peach)}
+.tl li:first-child .ico{background:var(--lilac)}
 .tl h3{margin-bottom:2px}
 .tl p{color:var(--ink-soft);font-size:1rem}
-.tl small{font:600 .75rem/1 var(--font-head);letter-spacing:.14em;color:var(--terra);display:block;margin-bottom:6px}
+.tl small{font:600 .75rem/1 var(--font-head);letter-spacing:.14em;color:var(--label);display:block;margin-bottom:6px}
 @media (min-width:900px){
   .process__grid{grid-template-columns:5fr 6fr;gap:96px;align-items:start}
   .process__side{position:sticky;top:120px}
@@ -260,7 +264,7 @@ a{color:inherit}
 .reviews{padding:var(--section) 0}
 .reviews__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:48px}
 .reviews__count{display:flex;align-items:center;gap:18px}
-.reviews__count strong{font:700 clamp(2.6rem,5vw,3.6rem)/1 var(--font-head);color:var(--coral-deep)}
+.reviews__count strong{font:700 clamp(2.6rem,5vw,3.6rem)/1 var(--font-head);color:var(--accent)}
 .reviews__count span{color:var(--ink-soft);max-width:16ch;line-height:1.45}
 .slider{display:grid;grid-auto-flow:column;grid-auto-columns:min(86%,420px);gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px var(--gutter) 30px;margin:0 calc(var(--gutter) * -1);scrollbar-width:none}
 .slider::-webkit-scrollbar{display:none}
@@ -271,10 +275,10 @@ a{color:inherit}
 .review .ph__cap{display:none}
 .review cite{font-style:normal;font-family:var(--font-head);font-weight:600;display:block}
 .review footer span{font-size:.9rem;color:var(--ink-soft)}
-.review:nth-child(2){background:#FBE9DD}
+.review:nth-child(2){background:#FBF0EA}
 .ctrls{display:flex;gap:12px}
 .round{width:54px;height:54px;border-radius:50%;border:0;background:var(--cream);box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:background var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
-.round:hover{background:var(--peach);box-shadow:var(--shadow-lift)}
+.round:hover{background:var(--lilac);box-shadow:var(--shadow-lift)}
 .round svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 @media (min-width:1000px){.slider{grid-auto-columns:calc((min(100vw, 1200px) - 2 * var(--gutter) - 44px) / 3)}}
 
@@ -285,9 +289,9 @@ a{color:inherit}
 .faq__item{background:var(--cream);border-radius:var(--r-card);box-shadow:var(--shadow);transition:box-shadow var(--dur) var(--ease)}
 .faq__item.open{box-shadow:var(--shadow-lift)}
 .faq__q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 30px;border:0;background:none;cursor:pointer;text-align:left;border-radius:var(--r-card);font:600 1.08rem/1.4 var(--font-head);color:var(--ink)}
-.faq__plus{width:36px;height:36px;border-radius:50%;background:var(--beige);display:grid;place-items:center;flex:none;transition:background var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.faq__plus{width:36px;height:36px;border-radius:50%;background:var(--bg);display:grid;place-items:center;flex:none;transition:background var(--dur) var(--ease),transform var(--dur) var(--ease)}
 .faq__plus svg{width:16px;height:16px;stroke:var(--ink);stroke-width:2;stroke-linecap:round}
-.faq__item.open .faq__plus{background:var(--peach);transform:rotate(45deg)}
+.faq__item.open .faq__plus{background:var(--lilac);transform:rotate(45deg)}
 .faq__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--dur) var(--ease)}
 .faq__item.open .faq__a{grid-template-rows:1fr}
 .faq__a > div{overflow:hidden}
@@ -296,7 +300,7 @@ a{color:inherit}
 /* ---------- 9. ФИНАЛЬНЫЙ CTA ---------- */
 .final{padding:var(--section) 0;position:relative;overflow:hidden}
 .final__knit{position:absolute;inset:0;opacity:.5;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='22'%3E%3Cpath d='M2 4 Q7 16 14 18 M26 4 Q21 16 14 18' fill='none' stroke='%23E8A598' stroke-opacity='.28' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='22'%3E%3Cpath d='M2 4 Q7 16 14 18 M26 4 Q21 16 14 18' fill='none' stroke='%23B9A6DD' stroke-opacity='.28' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
   -webkit-mask-image:radial-gradient(ellipse at center, transparent 30%, #000 75%);mask-image:radial-gradient(ellipse at center, transparent 30%, #000 75%)}
 .final__card{position:relative;max-width:640px;margin:0 auto;background:var(--cream);border-radius:32px;padding:clamp(32px,6vw,56px);box-shadow:var(--shadow-lift);text-align:center}
 .final__photo{width:132px;height:132px;margin:-110px auto 28px;border-radius:50%;box-shadow:var(--shadow-lift);border:6px solid var(--cream)}
@@ -306,12 +310,12 @@ a{color:inherit}
 .form{display:grid;gap:14px;text-align:left}
 .field label{display:block;font-size:.88rem;color:var(--ink-soft);margin:0 0 6px 6px}
 .field input,.field select{
-  width:100%;padding:16px 20px;border-radius:var(--r-input);border:1.5px solid #E9DCCB;background:var(--beige);
+  width:100%;padding:16px 20px;border-radius:var(--r-input);border:1.5px solid #E2D8EE;background:var(--bg);
   font:400 1rem/1.3 var(--font-body);color:var(--ink);appearance:none;-webkit-appearance:none;
   transition:border-color var(--dur) var(--ease),background var(--dur) var(--ease);
 }
-.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%236F6058' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 5l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center}
-.field input:focus,.field select:focus{border-color:var(--coral);background-color:var(--cream);outline:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%23665A78' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 5l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center}
+.field input:focus,.field select:focus{border-color:var(--lavender);background-color:var(--cream);outline:none}
 .form .btn{justify-content:center;margin-top:10px;width:100%}
 .form__fine{font-size:.82rem;color:var(--ink-soft);text-align:center;margin-top:4px}
 .form__fine a{color:var(--ink-soft)}
@@ -321,18 +325,37 @@ a{color:inherit}
 @media (min-width:640px){.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}}
 .form .row{display:grid;gap:14px}
 
-/* ---------- 10. ФУТЕР ---------- */
+/* ---------- ИНТЕНСИВЫ ---------- */
+.intensives{padding:var(--section) 0}
+.int__head{max-width:560px;margin-bottom:36px}
+.int__head h2{margin-bottom:18px}
+.int__cities{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.city{padding:14px 26px;border-radius:30px;border:1.5px solid var(--lavender);background:transparent;font:600 .98rem/1 var(--font-head);color:var(--ink);cursor:pointer;transition:background var(--dur) var(--ease),color var(--dur) var(--ease)}
+.city.is-on{background:var(--violet);border-color:var(--violet);color:var(--cream)}
+.city:disabled{cursor:default;color:var(--gray);border-color:#DCD1EC}
+.int__days{display:grid;gap:18px}
+.day{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--cream);border-radius:var(--r-card);padding:26px 32px;box-shadow:var(--shadow)}
+.day__date{display:flex;align-items:baseline;gap:14px}
+.day__date b{font:700 2rem/1 var(--font-head);color:var(--lavender)}
+.day__date span{color:var(--ink-soft)}
+.day__slots{display:flex;gap:10px;flex-wrap:wrap}
+.day__slots span{padding:10px 18px;border-radius:30px;background:var(--bg);color:var(--gray);font-size:.95rem}
+.int__note{margin-top:28px;color:var(--ink-soft)}
+.int__note a{color:var(--accent)}
+@media (min-width:900px){.int__days{grid-template-columns:repeat(3,1fr)}.day{flex-direction:column;align-items:flex-start}}
+
+/* ---------- 11. ФУТЕР ---------- */
 .foot{padding:80px 0 40px;font-size:.95rem}
 .foot__grid{display:grid;gap:40px;margin-bottom:56px}
-.foot h4{font:600 .8rem/1 var(--font-head);letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin:0 0 18px}
+.foot h4{font:600 .8rem/1 var(--font-head);letter-spacing:.14em;text-transform:uppercase;color:var(--label);margin:0 0 18px}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .foot a{text-decoration:none;color:var(--ink-soft);transition:color var(--dur) var(--ease)}
-.foot a:hover{color:var(--coral-deep)}
+.foot a:hover{color:var(--accent)}
 .foot__about{color:var(--ink-soft);max-width:30ch;margin-top:16px}
 .socials{display:flex;gap:12px}
 .socials a{width:46px;height:46px;border-radius:50%;background:var(--cream);box-shadow:var(--shadow);display:grid;place-items:center}
 .socials svg{width:20px;height:20px;stroke:var(--ink);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.foot__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:28px;border-top:1.5px solid #E6D9C8;color:var(--gray);font-size:.88rem}
+.foot__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:28px;border-top:1.5px solid #E4DAEE;color:var(--gray);font-size:.88rem}
 @media (min-width:800px){.foot__grid{grid-template-columns:1.4fr 1fr 1fr}}
 
 @media (prefers-reduced-motion:reduce){
@@ -357,6 +380,7 @@ a{color:inherit}
   <symbol id="i-chat" viewBox="0 0 48 48"><path d="M8.8 12.3c7.7-1.1 15.9-1 23.3.3 1.3.2 2.2 1.3 2.2 2.6 0 4.4-.1 8.8-.4 13.1-.1 1.3-1.2 2.3-2.5 2.3H19.5l-7.3 6.2.2-6.3h-3.8c-1.3 0-2.4-1-2.5-2.3-.3-4.4-.3-8.9 0-13.3.1-1.3 1.3-2.4 2.7-2.6z"/><path d="M37.5 18.5c1.8.4 3 1.8 3 3.6 0 3 0 6-.3 9-.1 1.3-1.2 2.3-2.5 2.3h-1.6l.1 4.6-5.3-4.6"/></symbol>
   <symbol id="i-hands" viewBox="0 0 48 48"><path d="M24 36.8c-8.6-5.3-14.8-10.8-15-17.3-.1-4.6 3.3-8 7.4-8 3.1 0 5.9 1.9 7.6 5 1.7-3.1 4.5-5 7.6-5 4.1 0 7.5 3.4 7.4 8-.2 6.5-6.4 12-15 17.3z"/></symbol>
   <symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="4" fill="none" stroke-width="1.6"/><circle cx="9" cy="10" r="1.8" fill="none" stroke-width="1.6"/><path d="M4 17.5l5-4.2 3.4 2.8 3.1-2.4 4.5 3.6" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="puzzle" viewBox="0 0 200 200"><path fill="currentColor" d="M44 30h40c-4-26 36-26 32 0h40q14 0 14 14v40c26-4 26 36 0 32v40q0 14-14 14h-40c4-26-36-26-32 0H44q-14 0-14-14v-40c26 4 26-36 0-32V44q0-14 14-14z"/></symbol>
   <symbol id="blob-a" viewBox="0 0 200 200"><path fill="currentColor" d="M44.6,-56.5C57.4,-43.9,67,-29.3,71.3,-12.4C75.6,4.5,74.6,23.6,65.5,37.8C56.4,52,39.2,61.2,20.9,67.6C2.6,74,-16.8,77.5,-33.3,71.2C-49.8,64.9,-63.4,48.8,-70.4,30.6C-77.4,12.4,-77.8,-7.9,-70.5,-24.5C-63.2,-41.1,-48.2,-54,-32.4,-65.9C-16.6,-77.8,0,-88.7,15.4,-86.2C30.8,-83.7,31.8,-69.1,44.6,-56.5Z" transform="translate(100 100)"/></symbol>
   <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12.3c5.2-.4 10.4-.4 15.4 0M14 6.8c1.9 2 3.8 3.6 5.6 5.4-1.9 1.8-3.7 3.5-5.5 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
@@ -364,16 +388,17 @@ a{color:inherit}
 <header class="top" id="top">
   <div class="wrap top__in">
     <a class="logo" href="#hero" aria-label="На главную">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34c-9-5.6-14.5-11-14.5-17.2C5.5 12 9 8.6 13.2 8.6c3 0 5.4 1.7 6.8 4.3 1.4-2.6 3.8-4.3 6.8-4.3 4.2 0 7.7 3.4 7.7 8.2C34.5 23 29 28.4 20 34z" fill="#FFD4B8"/><path d="M13 22c2.5 2.6 4.8 4 7 4.2 2.4-.2 4.7-1.6 7-4.2" fill="none" stroke="#B06A5B" stroke-width="2" stroke-linecap="round"/></svg>
-      Safaneiro
+      <svg class="logo__mark" viewBox="0 0 52 46" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M25 6c-5-3-11-2-14 3-5 0-8 5-6 9-4 3-4 9 0 12 0 5 5 9 10 8 3 3 7 3 10 1z"/><path d="M25 6v33"/><path d="M13 16h4.5c-1.5-3 3.5-3 2 0H25M9 27h5c-1.5 3 3.5 3 2 0h9"/><path d="M27 6c5-3 11-2 14 3 5 0 8 5 6 9 4 3 4 9 0 12 0 5-5 9-10 8-3 3-7 3-10 1"/><path d="M32 12c3 1.5 3.5 5 1 7.5M38 20c-3 1-3.5 4-1.5 6.5M31 29c2 1 3 3 2.5 5"/><circle cx="49" cy="6" r="1.6"/><circle cx="3" cy="40" r="1.6"/></svg>
+      <span class="logo__word">SAFA<br>NEIRO</span>
     </a>
     <nav class="nav" aria-label="Разделы">
       <a href="#approach">Подход</a>
-      <a href="#team">Специалисты</a>
+      <a href="#team">Специалист</a>
       <a href="#reviews">Отзывы</a>
+      <a href="#intensives">Интенсивы</a>
       <a href="#faq">Вопросы</a>
     </nav>
-    <a class="top__tel" href="tel:+70000000000">+7 (000) 000-00-00</a>
+    <a class="top__tel" href="tel:+79625446795">+7 962 544-67-95</a>
   </div>
 </header>
 
@@ -391,7 +416,8 @@ a{color:inherit}
         <p class="hero__note"><i></i>Первая встреча бесплатна. Решение — за вами.</p>
       </div>
       <div class="hero__media rv">
-        <svg class="hero__blob" aria-hidden="true"><use href="#blob-a"/></svg>
+        <svg class="hero__blob" aria-hidden="true"><use href="#puzzle"/></svg>
+        <span class="rings" aria-hidden="true"><i></i><i></i><i></i></span>
         <div class="hero__frame">
           <div class="ph" data-img="images/hero.webp"></div>
           <span class="ph__cap" style="left:28px;bottom:26px"><svg><use href="#i-img"/></svg>Фото: ребёнок и специалист за занятием. Естественный свет, живой момент.</span>
@@ -420,7 +446,7 @@ a{color:inherit}
 </section>
 
 <!-- 3. ПОДХОД: шаги на рисованной тропинке, без карточек -->
-<section class="band band--beige approach" id="approach">
+<section class="band band--bg approach" id="approach">
   <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 30c220 40 420 50 700 20s520-50 740-10v40H0z"/></svg>
   <div class="wrap">
     <div class="approach__head rv">
@@ -430,15 +456,15 @@ a{color:inherit}
     <div class="path">
       <svg class="path__line" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M30 28C170 10 250 40 360 34s190-8 290 40 220 54 320 20"/></svg>
       <div class="step rv">
-        <div class="step__num"><svg class="blob" aria-hidden="true"><use href="#blob-a"/></svg><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><b>1</b></div>
+        <div class="step__num"><svg class="blob" aria-hidden="true"><use href="#puzzle"/></svg><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><b>1</b></div>
         <div><h3>Диагностика</h3><p>Определяем, что именно важно развивать</p></div>
       </div>
       <div class="step rv">
-        <div class="step__num"><svg class="blob" aria-hidden="true"><use href="#blob-a"/></svg><svg class="i" aria-hidden="true"><use href="#i-plan"/></svg><b>2</b></div>
+        <div class="step__num"><svg class="blob" aria-hidden="true"><use href="#puzzle"/></svg><svg class="i" aria-hidden="true"><use href="#i-plan"/></svg><b>2</b></div>
         <div><h3>Своя программа</h3><p>Создаём план именно под вашего ребёнка</p></div>
       </div>
       <div class="step rv">
-        <div class="step__num"><svg class="blob" aria-hidden="true"><use href="#blob-a"/></svg><svg class="i" aria-hidden="true"><use href="#i-sprout"/></svg><b>3</b></div>
+        <div class="step__num"><svg class="blob" aria-hidden="true"><use href="#puzzle"/></svg><svg class="i" aria-hidden="true"><use href="#i-sprout"/></svg><b>3</b></div>
         <div><h3>Регулярные занятия</h3><p>Мягко и последовательно двигаемся к цели</p></div>
       </div>
     </div>
@@ -456,8 +482,8 @@ a{color:inherit}
           <path class="axis" d="M34 18c-1 56 1 118 0 170 118 1 250-1 370 1"/>
           <path class="area" d="M36 176C90 170 120 150 170 132s90-40 140-70 70-34 90-38V188H36z"/>
           <path class="curve" d="M36 176C90 170 120 150 170 132s90-40 140-70 70-34 90-38"/>
-          <circle cx="170" cy="132" r="6" fill="#FAF7F2" stroke="#E8A598" stroke-width="3"/>
-          <circle cx="400" cy="24" r="7" fill="#E8A598"/>
+          <circle cx="170" cy="132" r="6" fill="#FCFAF8" stroke="#9A82D6" stroke-width="3"/>
+          <circle cx="400" cy="24" r="7" fill="#9A82D6"/>
           <text x="30" y="210">старт</text><text x="152" y="210">3 мес</text><text x="370" y="210">6 мес</text>
         </svg>
         <figcaption class="chart__cap">Так обычно растёт динамика за первый курс</figcaption>
@@ -467,13 +493,13 @@ a{color:inherit}
       <div class="stat rv"><strong>87<small>%</small></strong><p>детей лучше удерживают внимание</p></div>
       <div class="stat rv"><strong>74<small>%</small></strong><p>родителей чувствуют себя спокойнее</p></div>
       <div class="stat rv"><strong>92<small>%</small></strong><p>детей делают шаги вперёд в&nbsp;речи</p></div>
-      <div class="stat stat--olive rv"><strong>6<small>мес</small></strong><p>в среднем до первых заметных перемен</p></div>
+      <div class="stat stat--warm rv"><strong>6<small>мес</small></strong><p>в среднем до первых заметных перемен</p></div>
     </div>
   </div>
 </section>
 
-<!-- 5. СПЕЦИАЛИСТЫ: основатель крупно + две карточки -->
-<section class="band band--beige team" id="team">
+<!-- 5. СПЕЦИАЛИСТ: Ильназ Гайсин, работает индивидуально -->
+<section class="band band--bg team" id="team">
   <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 40c200-36 460-44 700-14s520 34 740-6v60H0z"/></svg>
   <div class="wrap">
     <h2 class="rv">Кто будет рядом с&nbsp;<span class="accent">вашим ребёнком</span></h2>
@@ -482,26 +508,16 @@ a{color:inherit}
         <span class="ph__cap"><svg><use href="#i-img"/></svg>Портрет Ильназа Гайсина. Тёплый свет, взгляд в камеру.</span>
       </div>
       <div class="rv">
-        <span class="founder__role">Основатель центра</span>
+        <span class="founder__role">Основатель SAFA NEIRO</span>
         <h3>Ильназ Гайсин</h3>
         <div class="founder__meta">
-          <span class="chip">Нейропсихолог</span>
+          <span class="chip">Нейрокоррекция и АФК</span>
           <span class="chip"><b>12 лет</b> практики</span>
         </div>
         <p class="quote">«Я верю в&nbsp;каждого ребёнка. <span class="accent">Моя задача — помочь ему это почувствовать.</span>»</p>
+        <p class="founder__solo"><span class="ico"><svg><use href="#i-hands"/></svg></span><span>Ильназ ведёт каждое занятие сам — <span class="accent">один на один с&nbsp;ребёнком</span>.</span></p>
       </div>
     </div>
-    <div class="mates">
-      <article class="mate rv">
-        <div class="ph" data-img="images/specialist-1.webp"><span class="ph__cap"></span></div>
-        <div><h3>Алина Хасанова</h3><p>Логопед-дефектолог · 10 лет</p><em>«Каждое слово — маленькая победа»</em></div>
-      </article>
-      <article class="mate rv">
-        <div class="ph" data-img="images/specialist-2.webp"><span class="ph__cap"></span></div>
-        <div><h3>Мария Лебедева</h3><p>Нейропсихолог · 11 лет</p><em>«Играем всерьёз — и это работает»</em></div>
-      </article>
-    </div>
-    <p class="team__all rv">Нейропсихологи, дефектологи и логопеды <span class="accent">с опытом от 10 лет</span>.</p>
   </div>
 </section>
 
@@ -525,7 +541,7 @@ a{color:inherit}
 </section>
 
 <!-- 7. ОТЗЫВЫ: горизонтальный слайдер -->
-<section class="band band--peach reviews" id="reviews">
+<section class="band band--lilac reviews" id="reviews">
   <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 34c260 36 520 44 760 16s460-36 680-6v36H0z"/></svg>
   <div class="wrap">
     <div class="reviews__head">
@@ -556,7 +572,7 @@ a{color:inherit}
 </section>
 
 <!-- 8. FAQ: аккордеон по центру -->
-<section class="band band--beige faq" id="faq">
+<section class="band band--bg faq" id="faq">
   <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 46c220-34 480-40 720-10s500 36 720 0v44H0z"/></svg>
   <div class="wrap">
     <h2 class="rv">Частые <span class="accent">вопросы</span></h2>
@@ -565,7 +581,7 @@ a{color:inherit}
       <div class="faq__item rv"><button class="faq__q" aria-expanded="false">Сколько длится курс?<span class="faq__plus"><svg viewBox="0 0 16 16"><path d="M8 2v12M2 8h12"/></svg></span></button><div class="faq__a" role="region"><div><p>Обычно от 3 до 6 месяцев, 2–3 занятия в неделю. Точный срок подскажем после диагностики.</p></div></div></div>
       <div class="faq__item rv"><button class="faq__q" aria-expanded="false">Нужно приезжать в центр или есть онлайн?<span class="faq__plus"><svg viewBox="0 0 16 16"><path d="M8 2v12M2 8h12"/></svg></span></button><div class="faq__a" role="region"><div><p>Есть оба формата. Диагностику лучше пройти очно, занятия можно продолжать онлайн.</p></div></div></div>
       <div class="faq__item rv"><button class="faq__q" aria-expanded="false">Какие гарантии?<span class="faq__plus"><svg viewBox="0 0 16 16"><path d="M8 2v12M2 8h12"/></svg></span></button><div class="faq__a" role="region"><div><p>Мы не обещаем чудес. Мы гарантируем честную диагностику, понятный план и ежемесячный отчёт о динамике.</p></div></div></div>
-      <div class="faq__item rv"><button class="faq__q" aria-expanded="false">Можно совмещать с другими методами?<span class="faq__plus"><svg viewBox="0 0 16 16"><path d="M8 2v12M2 8h12"/></svg></span></button><div class="faq__a" role="region"><div><p>Да. Мы согласуем нагрузку с другими специалистами, чтобы ребёнку было комфортно.</p></div></div></div>
+      <div class="faq__item rv"><button class="faq__q" aria-expanded="false">Можно совмещать с другими методами?<span class="faq__plus"><svg viewBox="0 0 16 16"><path d="M8 2v12M2 8h12"/></svg></span></button><div class="faq__a" role="region"><div><p>Да. Ильназ учтёт другие занятия ребёнка, чтобы нагрузка была комфортной.</p></div></div></div>
       <div class="faq__item rv"><button class="faq__q" aria-expanded="false">Как понять, что занятия помогают?<span class="faq__plus"><svg viewBox="0 0 16 16"><path d="M8 2v12M2 8h12"/></svg></span></button><div class="faq__a" role="region"><div><p>Раз в месяц мы вместе смотрим на изменения. Вы видите прогресс в конкретных навыках.</p></div></div></div>
     </div>
   </div>
@@ -602,21 +618,43 @@ a{color:inherit}
   </div>
 </section>
 
+<!-- 10. ИНТЕНСИВЫ ПО ГОРОДАМ (раздел-заготовка под будущую запись) -->
+<section class="band band--lilac intensives" id="intensives">
+  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 36c260 34 520 42 760 14s460-34 680-4v34H0z"/></svg>
+  <div class="wrap">
+    <div class="int__head rv">
+      <span class="eyebrow">Скоро открываем запись</span>
+      <h2>Интенсивы <span class="accent">по городам</span></h2>
+      <p class="lead">Несколько дней занятий в вашем городе. Выберите дату и удобное время.</p>
+    </div>
+    <div class="int__cities rv" role="tablist" aria-label="Города">
+      <button class="city is-on" role="tab" aria-selected="true">Красная Горка</button>
+      <button class="city" role="tab" aria-selected="false" disabled>Другие города — скоро</button>
+    </div>
+    <div class="int__days">
+      <article class="day rv"><div class="day__date"><b>—</b><span>дата уточняется</span></div><div class="day__slots"><span>10:00</span><span>12:30</span><span>15:00</span></div></article>
+      <article class="day rv"><div class="day__date"><b>—</b><span>дата уточняется</span></div><div class="day__slots"><span>10:00</span><span>12:30</span><span>15:00</span></div></article>
+      <article class="day rv"><div class="day__date"><b>—</b><span>дата уточняется</span></div><div class="day__slots"><span>10:00</span><span>12:30</span><span>15:00</span></div></article>
+    </div>
+    <p class="int__note rv">Расписание появится здесь. Ближайшие даты подскажем в&nbsp;<a href="https://wa.me/79625446795?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B4%D0%B0%D1%82%D1%8B%20%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0%B8%D0%B2%D0%B0." target="_blank" rel="noopener">WhatsApp</a>.</p>
+  </div>
+</section>
+
 </main>
 
 <!-- 10. ФУТЕР -->
-<footer class="band band--beige foot">
+<footer class="band band--bg foot">
   <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 40c240 30 480 36 720 10s480-30 720 0v30H0z"/></svg>
   <div class="wrap">
     <div class="foot__grid">
       <div>
-        <a class="logo" href="#hero"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34c-9-5.6-14.5-11-14.5-17.2C5.5 12 9 8.6 13.2 8.6c3 0 5.4 1.7 6.8 4.3 1.4-2.6 3.8-4.3 6.8-4.3 4.2 0 7.7 3.4 7.7 8.2C34.5 23 29 28.4 20 34z" fill="#FFD4B8"/><path d="M13 22c2.5 2.6 4.8 4 7 4.2 2.4-.2 4.7-1.6 7-4.2" fill="none" stroke="#B06A5B" stroke-width="2" stroke-linecap="round"/></svg>Safaneiro</a>
+        <a class="logo" href="#hero"><svg class="logo__mark" viewBox="0 0 52 46" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M25 6c-5-3-11-2-14 3-5 0-8 5-6 9-4 3-4 9 0 12 0 5 5 9 10 8 3 3 7 3 10 1z"/><path d="M25 6v33"/><path d="M13 16h4.5c-1.5-3 3.5-3 2 0H25M9 27h5c-1.5 3 3.5 3 2 0h9"/><path d="M27 6c5-3 11-2 14 3 5 0 8 5 6 9 4 3 4 9 0 12 0 5-5 9-10 8-3 3-7 3-10 1"/><path d="M32 12c3 1.5 3.5 5 1 7.5M38 20c-3 1-3.5 4-1.5 6.5M31 29c2 1 3 3 2.5 5"/><circle cx="49" cy="6" r="1.6"/><circle cx="3" cy="40" r="1.6"/></svg><span class="logo__word">SAFA<br>NEIRO</span></a>
         <p class="foot__about">Центр нейрокоррекции. Бережно раскрываем потенциал каждого ребёнка.</p>
       </div>
       <div>
         <h4>Контакты</h4>
         <ul>
-          <li><a href="tel:+70000000000">+7 (000) 000-00-00</a></li>
+          <li><a href="tel:+79625446795">+7 962 544-67-95</a></li>
           <li><a href="mailto:hello@example.ru">hello@example.ru</a></li>
           <li>г. Город, ул. Улица, 1</li>
         </ul>
@@ -624,14 +662,14 @@ a{color:inherit}
       <div>
         <h4>Мы на связи</h4>
         <div class="socials">
-          <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21 4.5L3.5 11.3c-.8.3-.7 1.4.1 1.6l4.4 1.3 1.7 5.2c.2.7 1.1.9 1.6.3l2.4-2.5 4.4 3.2c.6.4 1.4.1 1.6-.6L22.3 5.7c.2-.8-.6-1.5-1.3-1.2z"/><path d="M8 14.2l9.5-6.6"/></svg></a>
+          <a href="https://t.me/Gaysin1" target="_blank" rel="noopener" aria-label="Telegram: @Gaysin1"><svg viewBox="0 0 24 24"><path d="M21 4.5L3.5 11.3c-.8.3-.7 1.4.1 1.6l4.4 1.3 1.7 5.2c.2.7 1.1.9 1.6.3l2.4-2.5 4.4 3.2c.6.4 1.4.1 1.6-.6L22.3 5.7c.2-.8-.6-1.5-1.3-1.2z"/><path d="M8 14.2l9.5-6.6"/></svg></a>
           <a href="#" aria-label="ВКонтакте"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="6"/><path d="M7 9c.5 3.7 2.4 6 5.5 6.2V12.5c1.3.2 2.3 1.2 2.8 2.7M16.8 9c-.4 1.4-1.5 2.8-4.3 3.5"/></svg></a>
-          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M4.5 19.5l1.2-3.8A8 8 0 1 1 8.6 18.6z"/><path d="M9.2 9.3c.3 2.5 2.4 4.7 5 5.3"/></svg></a>
+          <a href="https://wa.me/79625446795?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E." target="_blank" rel="noopener" aria-label="Записаться в WhatsApp"><svg viewBox="0 0 24 24"><path d="M4.5 19.5l1.2-3.8A8 8 0 1 1 8.6 18.6z"/><path d="M9.2 9.3c.3 2.5 2.4 4.7 5 5.3"/></svg></a>
         </div>
       </div>
     </div>
     <div class="foot__bottom">
-      <span>© 2026 Safaneiro</span>
+      <span>© 2026 SAFA NEIRO</span>
       <a href="#privacy" id="privacy">Политика конфиденциальности</a>
     </div>
   </div>
@@ -699,7 +737,7 @@ a{color:inherit}
   form.addEventListener('submit', e => {
     e.preventDefault();
     const bad = [...form.querySelectorAll('[required]')].find(f => !f.value.trim());
-    if (bad) { bad.focus(); bad.style.borderColor = 'var(--coral)'; return; }
+    if (bad) { bad.focus(); bad.style.borderColor = 'var(--lavender)'; return; }
     form.closest('.final__card').classList.add('sent');
   });
 })();
